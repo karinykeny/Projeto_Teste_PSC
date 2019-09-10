@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import Interfaces.InterfaceGenericoDAO;
 import Util.UtilJPA;
 import org.hibernate.Session;
+
+import Entidades.Pessoa;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenericoDAO <T extends InterfaceGenericoDAO>{
@@ -39,5 +43,10 @@ public abstract class GenericoDAO <T extends InterfaceGenericoDAO>{
 			Em.getTransaction().rollback();
 		}
 	}
+	
+	/*public void listar(T obj) {
+		Pessoa = new ArrayList();
+		
+	}*/
 	
 }

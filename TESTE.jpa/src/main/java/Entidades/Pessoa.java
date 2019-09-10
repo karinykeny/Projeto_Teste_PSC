@@ -22,6 +22,7 @@ public class Pessoa implements InterfaceGenericoDAO {
 	@Column (name = "End", length = 100)
 	private String end;
 	
+	private Conta conta;
 	
 	
 	public int getId() {
@@ -56,9 +57,17 @@ public class Pessoa implements InterfaceGenericoDAO {
 		this.end = end;
 	}
 
+
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+
 	public Object getChavePrimaria() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.id;
 	}
 
 }
