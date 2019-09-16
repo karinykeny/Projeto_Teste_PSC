@@ -1,6 +1,7 @@
 package Entidades;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class Pessoa implements InterfaceGenericoDAO {
 	private String cpf;
 	@Column (name = "End", length = 100)
 	private String end;
-	
+	@EmbeddedId
 	private Conta conta;
 	
 	

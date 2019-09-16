@@ -1,12 +1,12 @@
 package Entidades;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.Id;
 
 import Interfaces.InterfaceGenericoDAO;
 
-@Entity
+@Embeddable
 public class Conta implements InterfaceGenericoDAO{
 	
 	@Id
@@ -19,8 +19,6 @@ public class Conta implements InterfaceGenericoDAO{
 	private int qtd_depositos;
 	@Column (name = "QtdSaques")
 	private int qtd_saques;
-	
-	private Pessoa pessoa;
 
 	public int getNumero_da_conta() {
 		return numero_da_conta;
@@ -54,14 +52,7 @@ public class Conta implements InterfaceGenericoDAO{
 		this.qtd_saques = qtd_saques;
 	}
 
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
-	}
-
+	
 	public Object getChavePrimaria() {
 		return this.id;
 	}
