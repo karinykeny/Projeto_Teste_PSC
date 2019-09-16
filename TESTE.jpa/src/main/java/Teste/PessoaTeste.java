@@ -2,37 +2,42 @@ package Teste;
 
 import org.junit.Test;
 
+import Conexao.dao.ContaDAO;
 import Conexao.dao.GenericoDAO;
 import Conexao.dao.PessoaDAO;
+import Entidades.Conta;
 import Entidades.Pessoa;
+import Interfaces.InterfaceGenericoDAO;
 
 public class PessoaTeste {
-	
-	Pessoa p = new Pessoa();
-	GenericoDAO DAO = new PessoaDAO();
+
 	
 	@Test
 	public void salvarPessoa() {
 		
-		p.setNome("Bruna Lucia");
-		p.setCpf("00011122233");
-		p.setEnd("Minha casa");
-		
-		DAO.saveOrUpdate(p);
+		Pessoa p = new Pessoa();
+		PessoaDAO DAO = new PessoaDAO();
+
+		p.setNome("Emma Bunton");
+		p.setCpf("00011122255");
+		p.setEnd("casa casa");
+		p.setConta1(999999999);
+		p.setconta2(12000.00);
+		p.setconta3(100);
+		p.setconta4(100);
+
+		DAO.saveOrUpdate(p); 
 		
 		System.out.println(p.getId());
-		
-		p.setNome("Lucas Jose");
-		p.setCpf("33311122200");
-		p.setEnd("Tua casa");
-		
-		DAO.saveOrUpdate(p);
+
 	}
-	
-	/*public void deletarPessoa() {
-		
-		DAO.remove(p, 1);
-		
-	}*/
+
+	/*
+	 * public void deletarPessoa() {
+	 * 
+	 * DAO.remove(p, 1);
+	 * 
+	 * }
+	 */
 
 }

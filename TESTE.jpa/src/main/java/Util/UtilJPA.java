@@ -23,6 +23,6 @@ public class UtilJPA {
 
 	public static void closeEntityManagerFactory() {
 		emf.close();
-	}
+	} 
 
 }

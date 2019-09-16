@@ -1,7 +1,7 @@
 package Entidades;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,8 +22,8 @@ public class Pessoa implements InterfaceGenericoDAO {
 	private String cpf;
 	@Column (name = "End", length = 100)
 	private String end;
-	@EmbeddedId
-	private Conta conta;
+	@Embedded
+	private Conta conta; 
 	
 	
 	public int getId() {
@@ -46,8 +46,8 @@ public class Pessoa implements InterfaceGenericoDAO {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setCpf(Object object) {
+		this.cpf = (String) object;
 	}
 
 	public String getEnd() {
@@ -63,12 +63,30 @@ public class Pessoa implements InterfaceGenericoDAO {
 		return conta;
 	}
 
-	public void setConta(Conta conta) {
-		this.conta = conta;
+	public void setConta(Object object) {
+		this.conta = (Conta) object;
 	}
 
 	public Object getChavePrimaria() {
 		return this.id;
 	}
+
+	public void setConta1(int setNumero_da_conta) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void setconta2(double setSaldo) {
+		// TODO Auto-generated method stub
+	}
+	
+	public void setconta3(int setQtd_depositos) {
+		// TODO Auto-generated method stub
+	}
+	
+	public void setconta4(int setQtd_saques) {
+		// TODO Auto-generated method stub
+	}
+	
 
 }
