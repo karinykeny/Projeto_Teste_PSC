@@ -16,15 +16,17 @@ public class PessoaTeste {
 	public void salvarPessoa() {
 		
 		Pessoa p = new Pessoa();
+		Conta c = new Conta();
 		PessoaDAO DAO = new PessoaDAO();
 
 		p.setNome("Emma Bunton");
 		p.setCpf("00011122255");
 		p.setEnd("casa casa");
-		p.setConta1(999999999);
-		p.setconta2(12000.00);
-		p.setconta3(100);
-		p.setconta4(100);
+		c.setNumero_da_conta(999999999);
+		c.setQtd_depositos(100);
+		c.setQtd_saques(3);
+		c.setSaldo(1200.00);
+		p.setConta(c);
 
 		DAO.saveOrUpdate(p); 
 		
@@ -32,12 +34,5 @@ public class PessoaTeste {
 
 	}
 
-	/*
-	 * public void deletarPessoa() {
-	 * 
-	 * DAO.remove(p, 1);
-	 * 
-	 * }
-	 */
 
 }
