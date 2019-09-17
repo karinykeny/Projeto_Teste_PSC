@@ -70,23 +70,6 @@ public class Pessoa implements InterfaceGenericoDAO {
 	public Object getChavePrimaria() {
 		return this.id;
 	}
-
-	public void setConta1(int setNumero_da_conta) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public void setconta2(double setSaldo) {
-		// TODO Auto-generated method stub
-	}
-	
-	public void setconta3(int setQtd_depositos) {
-		// TODO Auto-generated method stub
-	}
-	
-	public void setconta4(int setQtd_saques) {
-		// TODO Auto-generated method stub
-	}
 	
 
 }
