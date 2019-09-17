@@ -20,13 +20,13 @@ public abstract class GenericoDAO <T extends InterfaceGenericoDAO>{
 		return Em.find(classe, id);
 	}
 
-	public void saveOrUpdate(Pessoa p) {
+	public void saveOrUpdate(T obj) {
 		try {
 			Em.getTransaction().begin();
-			if (p.getChavePrimaria() == null) {
-				Em.persist(p);
+			if (obj.getChavePrimaria() == null) {
+				Em.persist(obj);
 			} else {
-				Em.merge(p);
+				Em.merge(obj);
 			}
 			Em.getTransaction().commit();
 		} catch (Exception e) {
